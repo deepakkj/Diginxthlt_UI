@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Router, Route, Link } from './react-router';
 
-const Home = () => <Text>Home</Text>;
+const Home = () => <Text>This is the Home Page</Text>;
 
-const About = () => <Text>About</Text>;
+const About = () => <Text>This is the About Page</Text>;
 
 const App = () => (
   <Router>
