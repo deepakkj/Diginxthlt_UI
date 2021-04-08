@@ -1,38 +1,9 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Router, Route, Link } from './react-router';
+import { createStackNavigation, createAppContainer } from 'react-navigation';
+import splash from './splash';
+import login from './login';
 
-const Home = () => <Text>This is the Home Page</Text>;
-
-const About = () => <Text>This is the About Page</Text>;
-
-const App = () => (
-  <Router>
-    <View style={styles.container}>
-      <View style={styles.nav}>
-        <Link to="/">
-          <Text>Home</Text>
-        </Link>
-        <Link to="/about">
-          <Text>About</Text>
-        </Link>
-      </View>
-
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-    </View>
-  </Router>
-);
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 25,
-    padding: 10
-  },
-  nav:{
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
+const App = createStackNavigation({
+  splash: { screen: splash },
+  login: { screen: login }
 });
-
-export default App;
+export default createAppContainer(App);
